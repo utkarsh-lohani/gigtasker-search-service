@@ -29,7 +29,7 @@ public class TaskEventListener {
                 .status(taskDto.status().name())
                 .minPay(taskDto.minPay())
                 .maxPay(taskDto.maxPay())
-                .deadline(taskDto.deadline())
+                .deadline(taskDto.deadline() != null ? taskDto.deadline().toLocalDate() : null)
                 .build();
 
         searchRepository.save(doc);

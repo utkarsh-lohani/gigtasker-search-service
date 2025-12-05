@@ -12,6 +12,7 @@ import org.springframework.data.elasticsearch.annotations.GeoPointField;
 import org.springframework.data.elasticsearch.core.geo.GeoPoint;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Data
@@ -40,10 +41,10 @@ public class TaskDocument {
     @Field(type = FieldType.Double)
     private BigDecimal maxPay;
 
-    @Field
-    private LocalDateTime deadline;
+    @Field(type = FieldType.Date)
+    private LocalDate deadline;
 
-    @Field
+    @Field(type = FieldType.Date)
     private LocalDateTime createdAt;
 
     @GeoPointField
